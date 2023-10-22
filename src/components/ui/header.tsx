@@ -116,9 +116,11 @@ export const Header = () => {
         </SheetContent>
       </Sheet>
 
-      <h1 className="font-semibold text-lg">
-        <span className="text-primary">CL</span> Store
-      </h1>
+      <Link href="/">
+        <h1 className="font-semibold text-lg">
+          <span className="text-primary">CL</span> Store
+        </h1>
+      </Link>
 
       <Button size="icon" variant="outline">
         <ShoppingCartIcon />
