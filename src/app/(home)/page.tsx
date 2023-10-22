@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Categories } from "./components/categories";
 import { prismaClient } from "@/lib/prisma";
 import { ProductList } from "./components/product-list";
+import { SectionTitle } from "./components/section-title";
+import { PromoBanner } from "./components/promo-banner";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Home() {
@@ -13,15 +15,19 @@ export default async function Home() {
     },
   });
 
+  const keyboards = await prismaClient.product.findMany({
+    where: {
+      category: {
+        slug: "keyboards",
+      },
+    },
+  });
+
   return (
     <div>
-      <Image
-        className="h-auto w-full p-5"
-        sizes="100vw"
-        src="/banner-home-01.png"
-        width={0}
-        height={0}
-        alt="Até 55% de Desconto esse mês."
+      <PromoBanner
+        alt="/banner-home-01.png"
+        src={"Até 55% de Desconto esse mês."}
       />
 
       <div className="mt-8 p-5">
@@ -29,18 +35,19 @@ export default async function Home() {
       </div>
 
       <div className="mt-5">
-        <p className="font-bold uppercase pl-5 mb-3">Ofertas</p>
+        <SectionTitle>Ofertas</SectionTitle>
         <ProductList products={deals} />
       </div>
 
-      <Image
-        className="h-auto w-full p-5"
-        sizes="100vw"
-        src="/banner-home-02.png"
-        width={0}
-        height={0}
-        alt="Até 55% de Desconto em Mouses."
+      <PromoBanner
+        alt="/banner-home-02.png"
+        src={"Até 55% de Desconto em mouse."}
       />
+
+      <div className="mt-5">
+        <SectionTitle>Teclados</SectionTitle>
+        <ProductList products={keyboards} />
+      </div>
     </div>
   );
 }
