@@ -1,5 +1,3 @@
-"use client"
-
 import { Badge } from "@/components/ui/badge";
 import { Category } from "@prisma/client";
 import {
@@ -12,11 +10,11 @@ import {
 } from "lucide-react";
 import React from "react";
 
-interface CategorieItemProps {
+interface CategoryItemProps {
   category: Category;
 }
 
-export const CategorieItem = ({ category }: CategorieItemProps) => {
+export const CategoryItem = ({ category }: CategoryItemProps) => {
   const categoryIcon = {
     keyboards: <KeyboardIcon size={16} />,
     monitors: <MonitorIcon size={16} />,
