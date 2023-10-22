@@ -13,7 +13,7 @@ export default async function CatalogPage() {
         className="gap-1 w-fit text-base uppercase border-primary px-3 py-[0.375rem] border-2"
         variant="outline"
       >
-        <ShapesIcon size={16} />
+        <ShapesIcon size={16} /> 
         Catálogo
       </Badge>
 
