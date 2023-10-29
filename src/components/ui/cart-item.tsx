@@ -30,7 +30,7 @@ export const CartItem = ({ product }: CartItemProps) => {
   return (
     <div className="flex items-center justify-between">
       <div className="flex gap-4 items-center">
-        <div className="bg-accent h-[77px] w-[77px] flex items-center justify-center rounded lg">
+        <div className="bg-accent h-[77px] w-[77px] flex items-center justify-center rounded-lg">
           <Image
             src={product.imageUrls[0]}
             width={0}
