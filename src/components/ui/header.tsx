@@ -106,13 +106,17 @@ export const Header = () => {
               </Link>
             </SheetClose>
 
-            <Button
-              variant="outline"
-              className="w-full gap-2 flex justify-start "
-            >
-              <PercentIcon size={16} />
-              Ofertas
-            </Button>
+            <SheetClose asChild>
+              <Link href="/deals">
+                <Button
+                  variant="outline"
+                  className="w-full gap-2 flex justify-start "
+                >
+                  <PercentIcon size={16} />
+                  Ofertas
+                </Button>
+              </Link>
+            </SheetClose>
 
             <Link href={"/catalog"}>
               <Button
