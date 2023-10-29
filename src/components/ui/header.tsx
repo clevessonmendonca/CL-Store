@@ -12,7 +12,13 @@ import {
   PercentIcon,
   ShoppingCartIcon,
 } from "lucide-react";
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "./sheet";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
@@ -88,13 +94,17 @@ export const Header = () => {
               </Button>
             )}
 
-            <Button
-              variant="outline"
-              className="w-full gap-2 flex justify-start "
-            >
-              <HomeIcon size={16} />
-              Início
-            </Button>
+            <SheetClose asChild>
+              <Link href="/">
+                <Button
+                  variant="outline"
+                  className="w-full gap-2 flex justify-start "
+                >
+                  <HomeIcon size={16} />
+                  Início
+                </Button>
+              </Link>
+            </SheetClose>
 
             <Button
               variant="outline"
